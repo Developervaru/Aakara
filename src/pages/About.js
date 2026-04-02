@@ -23,7 +23,7 @@ const team = [
     role: "Marketing Head",
     initials: "AG",
     instagram: "https://www.instagram.com/akshay_gowdag/",
-    whatsapp: "https://wa.me/917007300000",
+    whatsapp: "https://wa.me/919901185352",
     email: "mailto:designs.aakara@gmail"
   },
   {
