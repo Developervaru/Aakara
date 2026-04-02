@@ -1,0 +1,26 @@
+/* Desktop View */
+.brand-main {
+  font-size: 20px;
+}
+
+.brand-sub {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .navbar-brand {
+    align-items: flex-start !important;
+  }
+
+  .brand-main {
+    font-size: 18px;
+    line-height: 1.1;
+  }
+
+  .brand-sub {
+    display: block;
+    font-size: 12px;
+  }
+}

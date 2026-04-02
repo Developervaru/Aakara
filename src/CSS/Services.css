@@ -1,0 +1,67 @@
+/* Animated Gradient Background */
+.services-section {
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1f4037);
+  background: linear-gradient(-45deg, #1e3c72, #2a5298, #0f2027, #203a43);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  color: white;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(90deg, #00f2fe, #4facfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem;
+}
+
+/* Glass Card */
+.service-glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Hover Glow Effect */
+.service-glass-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+  border: 1px solid #00f2fe;
+}
+
+/* Floating Icon Animation */
+.floating-icon {
+  animation: floatIcon 3s ease-in-out infinite;
+  color: #00f2fe;
+}
+
+@keyframes floatIcon {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Hover Icon Color Change */
+.service-glass-card:hover .floating-icon {
+  color: #4facfe;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gradient-text {
+    font-size: 2rem;
+  }
+}

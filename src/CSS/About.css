@@ -1,0 +1,71 @@
+/* HERO SECTION */
+.about-hero {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  height: 300px;
+}
+
+/* ABOUT TEXT */
+.about-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* ICON ANIMATION */
+.about-icon {
+  color: #7AE0D3;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ADDRESS CARD */
+.address-card {
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: 0.4s;
+}
+
+.address-card:hover {
+  transform: translateY(-10px);
+}
+
+/* TEAM CARDS */
+.team-card {
+  background: white;
+  border-radius: 20px;
+  transition: 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.team-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.team-img {
+  width: 150px;
+  transition: 0.4s ease;
+}
+
+.team-card:hover .team-img {
+  transform: scale(1.1);
+}
+
+/* TEAM SOCIAL */
+.team-social a {
+  margin: 0 10px;
+  font-size: 20px;
+  color: #555;
+  transition: 0.3s;
+}
+
+.team-social a:hover {
+  color: #7AE0D3;
+  transform: scale(1.2);
+}
