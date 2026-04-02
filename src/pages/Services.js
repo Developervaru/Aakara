@@ -1,78 +1,168 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../CSS/Services.css";
-import Tilt from "react-parallax-tilt";
 import {
-  FaDraftingCompass,
-  FaCubes,
-  FaPaintRoller,
-  FaUsersCog,
-  FaMapMarkedAlt,
-  FaTree,
-  FaBuilding,
-  FaHardHat,
-  FaCalculator,
-  FaUniversity,
-  FaCheckCircle
+  FaDraftingCompass, FaCubes, FaPaintRoller, FaUsersCog,
+  FaMapMarkedAlt, FaTree, FaBuilding, FaHardHat,
+  FaCalculator, FaUniversity, FaCheckCircle
 } from "react-icons/fa";
 
-function Services() {
+const services = [
+  {
+    icon: <FaDraftingCompass />,
+    title: "Architectural Planning",
+    desc: "Comprehensive design blueprints that translate your vision into precise, buildable plans aligned with local regulations."
+  },
+  {
+    icon: <FaCubes />,
+    title: "3D Rendering & Modelling",
+    desc: "Photo-realistic visualizations and immersive 3D walkthroughs so you see your space before a single brick is laid."
+  },
+  {
+    icon: <FaPaintRoller />,
+    title: "Interior Design",
+    desc: "Thoughtfully curated interiors that balance aesthetics, functionality, and your personal lifestyle."
+  },
+  {
+    icon: <FaUsersCog />,
+    title: "Consultant Coordination & Management",
+    desc: "Seamless coordination of MEP, structural, and all specialist consultants under one project umbrella."
+  },
+  {
+    icon: <FaMapMarkedAlt />,
+    title: "Layout Planning",
+    desc: "Strategic site and space planning to maximize utility, flow, and value from every square foot."
+  },
+  {
+    icon: <FaTree />,
+    title: "Landscaping Design",
+    desc: "Outdoor spaces that extend your living environment — gardens, terraces, and ecological landscapes."
+  },
+  {
+    icon: <FaBuilding />,
+    title: "Structural Design",
+    desc: "Engineered structural solutions ensuring safety, durability, and compliance with all applicable codes."
+  },
+  {
+    icon: <FaHardHat />,
+    title: "Construction & PMC Works",
+    desc: "End-to-end project management and construction supervision from groundbreaking to handover."
+  },
+  {
+    icon: <FaCalculator />,
+    title: "Cost Estimation (Design Options)",
+    desc: "Transparent, detailed cost estimates across multiple design alternatives to inform confident decisions."
+  },
+  {
+    icon: <FaUniversity />,
+    title: "Bank Estimations",
+    desc: "Professionally prepared valuation reports and estimates accepted by leading financial institutions."
+  },
+  {
+    icon: <FaCheckCircle />,
+    title: "Complete Building Services",
+    desc: "A single-point solution from concept and design through construction to final interior finishing."
+  },
+];
 
+const processSteps = [
+  { num: "01", title: "Consultation", desc: "Understand your vision, budget & timeline" },
+  { num: "02", title: "Concept Design", desc: "Develop initial layouts and 3D concepts" },
+  { num: "03", title: "Detailed Drawings", desc: "Finalize plans, elevations & BOQ" },
+  { num: "04", title: "Construction", desc: "Build with precision and oversight" },
+  { num: "05", title: "Handover", desc: "Complete finishing and keys in hand" },
+];
+
+function Services() {
   useEffect(() => {
-    AOS.init({ duration: 1200, once: true });
+    AOS.init({ duration: 1000, once: true });
   }, []);
 
-  const services = [
-    { icon: <FaDraftingCompass />, title: "Architectural Planning" },
-    { icon: <FaCubes />, title: "Illustration Rendering & 3D Design Modelling" },
-    { icon: <FaPaintRoller />, title: "Interior Design" },
-    { icon: <FaUsersCog />, title: "Consultant Coordination & Management" },
-    { icon: <FaMapMarkedAlt />, title: "Layout Planning" },
-    { icon: <FaTree />, title: "Landscaping Design" },
-    { icon: <FaBuilding />, title: "Structural Design" },
-    { icon: <FaHardHat />, title: "Construction & PMC Works" },
-    { icon: <FaCalculator />, title: "Cost Estimation (Design Options)" },
-    { icon: <FaUniversity />, title: "Bank Estimations" },
-    { icon: <FaCheckCircle />, title: "Complete Building Services (Start to End)" }
-  ];
-
   return (
-    <div className="services-section py-5">
+    <div className="services-page">
 
-      <div className="container">
-        <h2 className="text-center fw-bold mb-5 gradient-text" data-aos="fade-down">
-          Our Premium Services
-        </h2>
+      {/* ── HERO ── */}
+      <section className="services-hero">
+        <div className="container">
+          <div className="services-hero-label">Our Expertise</div>
+          <h1>
+            Premium <em>Services</em><br />
+            for Every Space
+          </h1>
+          <p>
+            From the first sketch to the final tile, we deliver comprehensive
+            architectural and building solutions tailored to your life.
+          </p>
+        </div>
+      </section>
 
-        <div className="row g-4">
-          {services.map((service, index) => (
+      {/* ── SERVICE LIST ── */}
+      <section className="services-list-section">
+        <div className="container">
+          {services.map((s, i) => (
             <div
-              className="col-lg-4 col-md-6"
-              key={index}
-              data-aos="zoom-in"
-              data-aos-delay={index * 100}
+              className="service-row-item"
+              key={i}
+              data-aos="fade-up"
+              data-aos-delay={i < 4 ? i * 80 : 0}
             >
-              <Tilt
-                glareEnable={true}
-                glareMaxOpacity={0.3}
-                scale={1.05}
-                transitionSpeed={2000}
-              >
-                <div className="service-glass-card text-center p-4">
-
-                  <div className="floating-icon mb-3">
-                    {React.cloneElement(service.icon, { size: 45 })}
-                  </div>
-
-                  <h6 className="fw-bold">{service.title}</h6>
-
-                </div>
-              </Tilt>
+              <div className="srv-num">{String(i + 1).padStart(2, "0")}</div>
+              <div className="srv-icon-wrap">{s.icon}</div>
+              <div className="srv-body">
+                <div className="srv-title">{s.title}</div>
+                <p className="srv-desc">{s.desc}</p>
+              </div>
             </div>
           ))}
         </div>
-      </div>
+      </section>
+
+      {/* ── PROCESS ── */}
+      <section className="process-section">
+        <div className="container">
+          <div data-aos="fade-up">
+            <div className="section-label">How We Work</div>
+            <h2 className="section-title">
+              Our <em>Process</em>
+            </h2>
+          </div>
+
+          <div className="row g-4" data-aos="fade-up" data-aos-delay="100">
+            {processSteps.map((step, i) => (
+              <div className="col-lg col-md-4 col-6" key={i}>
+                <div className="process-step">
+                  <div className="step-circle">{step.num}</div>
+                  <h6>{step.title}</h6>
+                  <p>{step.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-5" data-aos="fade-up">
+            <Link to="/contact" className="btn-hero-primary" style={{
+              fontFamily: "'DM Sans', sans-serif",
+              fontSize: "12px",
+              fontWeight: 500,
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+              background: "#0D0D0D",
+              color: "#fff",
+              border: "none",
+              padding: "16px 40px",
+              borderRadius: "2px",
+              textDecoration: "none",
+              display: "inline-block",
+              transition: "all 0.3s ease"
+            }}>
+              Discuss Your Project
+            </Link>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }

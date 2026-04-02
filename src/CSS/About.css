@@ -1,71 +1,290 @@
-/* HERO SECTION */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C97A;
+  --dark: #0D0D0D;
+  --cream: #F7F3EE;
+}
+
+.about-page { background: #fff; }
+
+/* ── HERO ── */
 .about-hero {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  height: 300px;
+  background: var(--dark);
+  padding: 120px 0 80px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* ABOUT TEXT */
-.about-text {
+.about-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.about-hero-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.about-hero-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.about-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.about-hero h1 em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.about-hero p {
+  font-family: 'DM Sans', sans-serif;
   font-size: 16px;
-  line-height: 1.8;
-  color: #444;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  max-width: 520px;
+  line-height: 1.75;
+  margin: 0;
 }
 
-/* ICON ANIMATION */
-.about-icon {
-  color: #7AE0D3;
-  animation: floatIcon 3s ease-in-out infinite;
+/* ── STORY SECTION ── */
+.about-story {
+  padding: 100px 0;
 }
 
-@keyframes floatIcon {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
+.section-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
-/* ADDRESS CARD */
-.address-card {
-  background: linear-gradient(135deg, #f8f9fa, #ffffff);
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  transition: 0.4s;
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
 }
 
-.address-card:hover {
-  transform: translateY(-10px);
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 4vw, 50px);
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1.15;
 }
 
-/* TEAM CARDS */
+.section-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.about-body-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #555;
+  line-height: 1.85;
+  margin-top: 24px;
+}
+
+.about-image-wrap {
+  position: relative;
+}
+
+.about-image-wrap img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.about-image-badge {
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  background: var(--gold);
+  color: var(--dark);
+  padding: 24px 28px;
+  border-radius: 2px;
+}
+
+.about-image-badge .num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 40px;
+  font-weight: 700;
+  display: block;
+  line-height: 1;
+}
+
+.about-image-badge .lbl {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: block;
+  margin-top: 4px;
+}
+
+/* ── VALUES STRIP ── */
+.values-strip {
+  background: var(--cream);
+  padding: 70px 0;
+}
+
+.value-item {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.value-item h5 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.value-item p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: #888;
+  margin: 0;
+  line-height: 1.65;
+}
+
+.value-icon {
+  font-size: 28px;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+/* ── TEAM ── */
+.about-team {
+  padding: 100px 0;
+}
+
 .team-card {
-  background: white;
-  border-radius: 20px;
-  transition: 0.4s ease;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: 1px solid #eeece9;
+  border-radius: 2px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  background: #fff;
 }
 
 .team-card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+  border-color: var(--gold);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.07);
 }
 
-.team-img {
-  width: 150px;
-  transition: 0.4s ease;
+.team-card-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+  background: var(--cream);
 }
 
-.team-card:hover .team-img {
-  transform: scale(1.1);
+.team-card-img-placeholder {
+  width: 100%;
+  height: 280px;
+  background: linear-gradient(135deg, #f0ede8, #e5e0d8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* TEAM SOCIAL */
-.team-social a {
-  margin: 0 10px;
-  font-size: 20px;
-  color: #555;
-  transition: 0.3s;
+.team-initials {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px;
+  font-weight: 700;
+  color: var(--gold);
 }
 
-.team-social a:hover {
-  color: #7AE0D3;
-  transform: scale(1.2);
+.team-card-body {
+  padding: 24px;
+  border-top: 1px solid #f0ede8;
+}
+
+.team-card-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+
+.team-card-role {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.team-card-links {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.team-link {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #eeece9;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #888;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.team-link:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: #fff8ee;
+}
+
+@media (max-width: 768px) {
+  .about-image-badge { left: 0; bottom: 0; }
+  .about-story, .about-team { padding: 70px 0; }
 }

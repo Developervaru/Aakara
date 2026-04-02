@@ -1,67 +1,270 @@
-/* Animated Gradient Background */
-.services-section {
-  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1f4037);
-  background: linear-gradient(-45deg, #1e3c72, #2a5298, #0f2027, #203a43);
-  background-size: 400% 400%;
-  animation: gradientBG 12s ease infinite;
-  color: white;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C97A;
+  --dark: #0D0D0D;
+  --cream: #F7F3EE;
 }
 
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.services-page {
+  background: #fff;
 }
 
-/* Gradient Text */
-.gradient-text {
-  background: linear-gradient(90deg, #00f2fe, #4facfe);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 2.5rem;
+/* ---- HERO ---- */
+.services-hero {
+  background: var(--dark);
+  padding: 120px 0 80px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Glass Card */
-.service-glass-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.2);
-  transition: all 0.4s ease;
-  cursor: pointer;
-  min-height: 200px;
+.services-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.services-hero-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.services-hero-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.services-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.services-hero h1 em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.services-hero p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  max-width: 520px;
+  line-height: 1.75;
+}
+
+/* ---- SERVICES GRID ---- */
+.services-list-section {
+  padding: 80px 0 100px;
+}
+
+.service-row-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  border-bottom: 1px solid #eeece9;
+  padding: 40px 0;
+  position: relative;
+  transition: all 0.35s ease;
+  cursor: default;
+}
+
+.service-row-item:first-child {
+  border-top: 1px solid #eeece9;
+}
+
+.service-row-item::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--gold);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.35s ease;
+}
+
+.service-row-item:hover::before {
+  transform: scaleY(1);
+}
+
+.service-row-item:hover .srv-title {
+  color: var(--gold);
+}
+
+.srv-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ccc;
+  width: 60px;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+.srv-icon-wrap {
+  width: 52px;
+  height: 52px;
+  background: var(--cream);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
   justify-content: center;
+  font-size: 22px;
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-right: 28px;
+  transition: all 0.35s;
 }
 
-/* Hover Glow Effect */
-.service-glass-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
-  border: 1px solid #00f2fe;
+.service-row-item:hover .srv-icon-wrap {
+  background: var(--dark);
+  color: var(--gold);
 }
 
-/* Floating Icon Animation */
-.floating-icon {
-  animation: floatIcon 3s ease-in-out infinite;
-  color: #00f2fe;
+.srv-body {
+  flex: 1;
 }
 
-@keyframes floatIcon {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+.srv-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 8px;
+  transition: color 0.35s;
 }
 
-/* Hover Icon Color Change */
-.service-glass-card:hover .floating-icon {
-  color: #4facfe;
+.srv-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #888;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 560px;
 }
 
-/* Responsive */
+/* ---- PROCESS SECTION ---- */
+.process-section {
+  background: var(--cream);
+  padding: 100px 0;
+}
+
+.process-section .section-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.process-section .section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.process-section .section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 60px;
+}
+
+.process-section .section-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.process-step {
+  text-align: center;
+  padding: 0 16px;
+  position: relative;
+}
+
+.process-step::after {
+  content: '→';
+  position: absolute;
+  right: -10px;
+  top: 20px;
+  font-size: 24px;
+  color: #ccc;
+}
+
+.process-step:last-child::after {
+  display: none;
+}
+
+.step-circle {
+  width: 60px;
+  height: 60px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.process-step h6 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.process-step p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: #888;
+  margin: 0;
+  line-height: 1.6;
+}
+
 @media (max-width: 768px) {
-  .gradient-text {
-    font-size: 2rem;
+  .service-row-item {
+    flex-wrap: wrap;
+    gap: 16px;
   }
+
+  .srv-num { display: none; }
+
+  .process-step::after { display: none; }
 }

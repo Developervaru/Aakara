@@ -1,139 +1,163 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "../CSS/Contact.css";
 import {
-  FaPhoneAlt,
-  FaEnvelope,
-  FaWhatsapp,
-  FaMapMarkerAlt,
-  FaInstagram
+  FaPhoneAlt, FaEnvelope, FaWhatsapp,
+  FaMapMarkerAlt, FaInstagram
 } from "react-icons/fa";
 
 function Contact() {
-
   useEffect(() => {
-    AOS.init({ duration: 1200, once: true });
+    AOS.init({ duration: 1000, once: true });
   }, []);
 
   return (
-    <div className="contact-section py-5">
+    <div className="contact-page">
 
-      <div className="container">
+      {/* ── HERO ── */}
+      <section className="contact-hero">
+        <div className="container">
+          <div className="contact-hero-label">Say Hello</div>
+          <h1>
+            Let's Build<br />
+            <em>Something Great</em>
+          </h1>
+          <p>
+            Whether you have a dream project in mind or just a question —
+            we'd love to hear from you. Reach out, and we'll respond promptly.
+          </p>
+        </div>
+      </section>
 
-        <h2 className="text-center fw-bold mb-5 gradient-text" data-aos="fade-down">
-          Get In Touch With Us
-        </h2>
+      {/* ── CONTACT BODY ── */}
+      <section className="contact-body">
+        <div className="container">
+          <div className="row g-5">
 
-        <div className="row g-4">
+            {/* Info */}
+            <div className="col-lg-5" data-aos="fade-right">
+              <div className="contact-info-label">Reach Us</div>
+              <h2 className="contact-info-title">
+                Our <em>Contact</em><br />
+                Details
+              </h2>
 
-          {/* Address Card */}
-          <div className="col-lg-6" data-aos="fade-right">
-            <div className="contact-card p-4">
+              <div className="contact-detail-row">
+                <div className="contact-detail-icon"><FaPhoneAlt /></div>
+                <div>
+                  <div className="contact-detail-label">Phone</div>
+                  <a href="tel:+919480297100" className="contact-detail-value">
+                    +91 9480297100
+                  </a>
+                </div>
+              </div>
 
-              <h5 className="mb-3">
-                <FaMapMarkerAlt className="me-2 text-danger" />
-                Our Address
-              </h5>
+              <div className="contact-detail-row">
+                <div className="contact-detail-icon"><FaWhatsapp /></div>
+                <div>
+                  <div className="contact-detail-label">WhatsApp</div>
+                  <a
+                    href="https://wa.me/9480297100"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="contact-detail-value"
+                  >
+                    Chat on WhatsApp
+                  </a>
+                </div>
+              </div>
 
-              <p>
-                <strong>Aakara</strong><br />
-                Shop Number- 7,<br />
-                Opposite Government Primary School,<br />
-                Jnana Bharthi, P Shankar Rd,<br />
-                Mariyappana Palya, Jnana Ganga Nagar,<br />
-                Bengaluru, Karnataka 560056
-              </p>
+              <div className="contact-detail-row">
+                <div className="contact-detail-icon"><FaEnvelope /></div>
+                <div>
+                  <div className="contact-detail-label">Email</div>
+                  <a href="mailto:designs.aakara@gmail.com" className="contact-detail-value">
+                    designs.aakara@gmail.com
+                  </a>
+                </div>
+              </div>
 
-              <a
-                href="https://maps.app.goo.gl/4PVKZ9FpaAi9sVv1A"
-                target="_blank"
-                rel="noreferrer"
-                className="btn btn-outline-primary mt-2"
-              >
-                View on Google Maps
-              </a>
+              <div className="contact-detail-row">
+                <div className="contact-detail-icon"><FaMapMarkerAlt /></div>
+                <div>
+                  <div className="contact-detail-label">Address</div>
+                  <span className="contact-detail-value">
+                    Shop No. 7, Opp. Govt. Primary School,<br />
+                    Jnana Bharthi, P Shankar Rd,<br />
+                    Jnana Ganga Nagar, Bengaluru — 560056
+                  </span>
+                </div>
+              </div>
 
-            </div>
-          </div>
-
-          {/* Contact Details */}
-          <div className="col-lg-6" data-aos="fade-left">
-            <div className="contact-card p-4 text-dark">
-
-              <h5 className="mb-3">Contact Details</h5>
-
-              <p>
-                <FaPhoneAlt className="contact-icon me-2" />
-                <a href="tel:+919480297100">+91 9480297100</a>
-              </p>
-
-              <p>
-                <FaWhatsapp className="contact-icon me-2 text-success" />
-                <a
-                  href="https://wa.me/9480297100"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Chat on WhatsApp
-                </a>
-              </p>
-
-              <p>
-                <FaEnvelope className="contact-icon me-2 text-primary" />
-                <a href="mailto:designs.aakara@gmail.com">
-                  designs.aakara@gmail.com
-                </a>
-              </p>
-
-              {/* Social Media */}
-              <div className="social-icons mt-4">
+              <div className="contact-socials">
                 <a
                   href="https://www.instagram.com/aakara_arch"
                   target="_blank"
                   rel="noreferrer"
-                  className="social-icon text-dark border-dark border-2"
+                  className="contact-social-btn"
                 >
-                  <FaInstagram />
+                  <FaInstagram /> Instagram
                 </a>
-
                 <a
                   href="https://wa.me/9480297100"
                   target="_blank"
                   rel="noreferrer"
-                  className="social-icon text-dark border-dark border-2"
+                  className="contact-social-btn"
                 >
-                  <FaWhatsapp />
-                </a>
-
-                <a
-                  href="mailto:designs.aakara@gmail.com"
-                  className="social-icon text-dark border-dark border-2"
-                >
-                  <FaEnvelope />
+                  <FaWhatsapp /> WhatsApp
                 </a>
               </div>
-
             </div>
+
+            {/* Map */}
+            <div className="col-lg-7" data-aos="fade-left">
+              <div className="contact-map-wrap">
+                <iframe
+                  title="Aakara Location"
+                  src="https://maps.google.com/maps?q=Aakara%20Jnana%20Ganga%20Nagar%20Bengaluru&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  allowFullScreen=""
+                  loading="lazy"
+                />
+              </div>
+              <div
+                style={{
+                  marginTop: "24px",
+                  padding: "24px",
+                  border: "1px solid #eeece9",
+                  borderRadius: "2px",
+                  background: "#fafaf8"
+                }}
+              >
+                <p style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "14px",
+                  color: "#888",
+                  margin: 0,
+                  fontWeight: 300,
+                  lineHeight: 1.7
+                }}>
+                  <strong style={{ color: "#0D0D0D", fontWeight: 500 }}>Working Hours:</strong> Monday – Saturday, 9:00 AM – 7:00 PM<br />
+                  <strong style={{ color: "#0D0D0D", fontWeight: 500 }}>Sunday:</strong> By appointment only
+                </p>
+              </div>
+            </div>
+
           </div>
-
         </div>
+      </section>
 
-        {/* Google Map Section */}
-        <div className="mt-5" data-aos="zoom-in">
-          <div className="map-container shadow-lg rounded">
-            <iframe
-              title="Aakara Location"
-              src="https://maps.google.com/maps?q=Aakara%20Jnana%20Ganga%20Nagar&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
-          </div>
-        </div>
+      {/* Floating WhatsApp */}
+      <a
+        href="https://wa.me/9480297100"
+        target="_blank"
+        rel="noreferrer"
+        className="whatsapp-float"
+        aria-label="Chat on WhatsApp"
+      >
+        <FaWhatsapp />
+      </a>
 
-      </div>
     </div>
   );
 }

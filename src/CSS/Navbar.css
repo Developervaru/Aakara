@@ -1,26 +1,159 @@
-/* Desktop View */
-.brand-main {
-  font-size: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C97A;
+  --dark: #0D0D0D;
+  --charcoal: #1A1A1A;
+  --cream: #F7F3EE;
+  --text-muted: #7A7A7A;
 }
 
-.brand-sub {
-  font-size: 14px;
-  letter-spacing: 1px;
+.aakara-navbar {
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+  padding: 0;
+  transition: all 0.4s ease;
+  font-family: 'DM Sans', sans-serif;
+  z-index: 1000;
 }
 
-/* Mobile View */
-@media (max-width: 768px) {
-  .navbar-brand {
-    align-items: flex-start !important;
+.aakara-navbar.scrolled {
+  box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+}
+
+.aakara-navbar .container {
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-wrapper img {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-text-block .brand-main {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--dark);
+  letter-spacing: 0.03em;
+  display: block;
+  line-height: 1.1;
+}
+
+.brand-text-block .brand-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--gold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  display: block;
+}
+
+.navbar-nav .nav-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #444 !important;
+  padding: 8px 16px !important;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.35s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active-link {
+  color: var(--dark) !important;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active-link::after {
+  width: 60%;
+}
+
+.nav-contact-btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: var(--dark);
+  color: #fff !important;
+  border: none;
+  padding: 10px 22px !important;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.nav-contact-btn:hover {
+  background: var(--gold) !important;
+  color: var(--dark) !important;
+}
+
+.nav-contact-btn::after {
+  display: none !important;
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 0;
+  outline: none;
+  box-shadow: none !important;
+}
+
+.navbar-toggler-icon {
+  width: 22px;
+  height: 2px;
+  background: var(--dark);
+  display: block;
+  position: relative;
+  transition: 0.3s;
+}
+
+@media (max-width: 991px) {
+  .aakara-navbar .container {
+    height: 70px;
   }
 
-  .brand-main {
-    font-size: 18px;
-    line-height: 1.1;
+  .navbar-collapse {
+    background: #fff;
+    padding: 20px 10px;
+    border-top: 1px solid rgba(201, 168, 76, 0.15);
+    margin-top: 0;
   }
 
-  .brand-sub {
-    display: block;
-    font-size: 12px;
+  .navbar-nav .nav-link {
+    padding: 12px 8px !important;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .nav-contact-btn {
+    margin-top: 12px;
+    display: inline-block;
   }
 }
