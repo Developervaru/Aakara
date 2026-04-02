@@ -129,7 +129,7 @@
 .navbar-toggler-icon {
   width: 22px;
   height: 2px;
-  background: var(--dark);
+  background: var(--cream);
   display: block;
   position: relative;
   transition: 0.3s;

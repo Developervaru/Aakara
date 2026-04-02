@@ -33,9 +33,9 @@ function Navbar() {
       <div className="container">
 
         <Link className="brand-wrapper navbar-brand" to="/" onClick={closeNavbar}>
-          <img src={Logo} alt="Aakara" />
+          <img src={Logo} alt="Harmya Aakara" />
           <div className="brand-text-block">
-            <span className="brand-main">Aakara</span>
+            <span className="brand-main">Harmya Aakara</span>
             <span className="brand-sub">Architects & Engineers</span>
           </div>
         </Link>

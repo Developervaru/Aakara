@@ -12,8 +12,8 @@ function Footer() {
 
           {/* Brand */}
           <div className="col-lg-4 col-md-6">
-            <img src={Logo} alt="Aakara" style={{ height: "52px", marginBottom: "16px" }} />
-            <span className="footer-brand-name">Aakara</span>
+            <img src={Logo} alt="Harmya Aakara" style={{ height: "52px", marginBottom: "16px" }} />
+            <span className="footer-brand-name">Harmya Aakara</span>
             <span className="footer-brand-sub">Architects & Engineers</span>
             <p className="footer-desc">
               Delivering bespoke architectural and interior design solutions rooted
@@ -89,7 +89,7 @@ function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>© 2025 Aakara Architects & Engineers. All Rights Reserved.</p>
+          <p>© 2025 Harmya Aakara Architects & Engineers. All Rights Reserved.</p>
           <p>
             Designed with care in{" "}
             <span style={{ color: "rgba(201,168,76,0.7)" }}>Bengaluru</span>

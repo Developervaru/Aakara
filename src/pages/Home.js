@@ -77,7 +77,7 @@ function Home() {
             <em>Defining Lives.</em>
           </h1>
           <p className="hero-desc">
-            Aakara is an architectural and interior design firm delivering bespoke
+            Harmya Aakara is an architectural and interior design firm delivering bespoke
             building solutions rooted in client lifestyle, need, and the unique
             ecology of every site.
           </p>
@@ -139,7 +139,7 @@ function Home() {
           <div className="row align-items-center g-5">
             <div className="col-lg-5" data-aos="fade-right">
               <div className="why-us-image-wrap">
-                <img src={HomeBg} alt="Aakara Architecture" />
+                <img src={HomeBg} alt="Harmya Aakara Architecture" />
                 <div className="why-us-badge">
                   <span className="num">50+</span>
                   <span className="lbl">Projects<br />Completed</span>
@@ -148,7 +148,7 @@ function Home() {
             </div>
 
             <div className="col-lg-7" data-aos="fade-left">
-              <div className="section-label">Why Aakara</div>
+              <div className="section-label">Why Harmya Aakara</div>
               <h2 className="section-title mb-4">
                 Built on Trust,<br />
                 <em>Designed with Passion</em>
@@ -173,7 +173,7 @@ function Home() {
       </section>
 
       {/* ── CTA BAND ── */}
-      <section className="cta-band">
+      <section className="cta-band" >
         <div className="container">
           <div className="row align-items-center gy-4">
             <div className="col-lg-7" data-aos="fade-right">

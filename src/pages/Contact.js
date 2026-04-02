@@ -114,8 +114,8 @@ function Contact() {
             <div className="col-lg-7" data-aos="fade-left">
               <div className="contact-map-wrap">
                 <iframe
-                  title="Aakara Location"
-                  src="https://maps.google.com/maps?q=Aakara%20Jnana%20Ganga%20Nagar%20Bengaluru&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  title="Harmya Aakara Location"
+                  src="https://maps.google.com/maps?q=Harmya Aakara%20Jnana%20Ganga%20Nagar%20Bengaluru&t=&z=15&ie=UTF8&iwloc=&output=embed"
                   allowFullScreen=""
                   loading="lazy"
                 />

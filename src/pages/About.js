@@ -47,7 +47,7 @@ function About() {
         <div className="container">
           <div className="about-hero-label">Our Story</div>
           <h1>
-            About <em>Aakara</em>
+            About <em>Harmya Aakara</em>
           </h1>
           <p>
             An architectural and interior design firm rooted in Bengaluru — designing
@@ -62,7 +62,7 @@ function About() {
           <div className="row align-items-center g-5">
             <div className="col-lg-5" data-aos="fade-right">
               <div className="about-image-wrap">
-                <img src={HomeBg} alt="Aakara Studio" />
+                <img src={HomeBg} alt="Harmya Aakara Studio" />
                 <div className="about-image-badge">
                   <span className="num">3+</span>
                   <span className="lbl">Years of<br />Excellence</span>
@@ -77,7 +77,7 @@ function About() {
                 <em>Life &amp; Landscape</em>
               </h2>
               <p className="about-body-text">
-                Aakara is an Architectural and Interior Design firm which believes in
+                Harmya Aakara is an Architectural and Interior Design firm which believes in
                 rendering architectural and building solutions based on client need, lifestyle
                 and ecology — all under one roof.
               </p>
