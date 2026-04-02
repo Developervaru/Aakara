@@ -72,7 +72,7 @@ function Home() {
 
         <div className="container home-hero-content">
           <div className="hero-eyebrow">Bengaluru, Karnataka</div>
-          {/* <h1 className="hero-title">
+          <h1 className="hero-title">
             Designing Spaces,<br />
             <em>Defining Lives.</em>
           </h1>
@@ -80,7 +80,7 @@ function Home() {
             Harmya Aakara is an architectural and interior design firm delivering bespoke
             building solutions rooted in client lifestyle, need, and the unique
             ecology of every site.
-          </p> */}
+          </p>
           <div className="hero-actions">
             <Link to="/services" className="btn-hero-primary">Our Services</Link>
             <Link to="/contact" className="btn-hero-ghost">Get In Touch</Link>
