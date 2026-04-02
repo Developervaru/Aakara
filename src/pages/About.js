@@ -164,41 +164,39 @@ function About() {
                   <div className="team-card-img-placeholder">
                     <span className="team-initials">{member.initials}</span>
                   </div>
-<div className="team-card-body">
-  <div className="team-card-name">{member.name}</div>
-  <div className="team-card-role">{member.role}</div>
-  <div className="team-card-desc">{member.instagram}</div>
+                  <div className="team-card-body">
+                    <div className="team-card-name">{member.name}</div>
+                    <div className="team-card-role">{member.role}</div>
+                    <div className="team-card-links">
+                      {member.instagram && (
+                        <a
+                          href={member.instagram}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="team-link"
+                        >
+                          <FaInstagram />
+                        </a>
+                      )}
 
-  <div className="team-card-links">
-    {member.instagram && (
-      <a
-        href={member.instagram}
-        target="_blank"
-        rel="noreferrer"
-        className="team-link"
-      >
-        <FaInstagram />
-      </a>
-    )}
+                      {member.whatsapp && (
+                        <a
+                          href={member.whatsapp}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="team-link"
+                        >
+                          <FaWhatsapp />
+                        </a>
+                      )}
 
-    {member.whatsapp && (
-      <a
-        href={member.whatsapp}
-        target="_blank"
-        rel="noreferrer"
-        className="team-link"
-      >
-        <FaWhatsapp />
-      </a>
-    )}
-
-    {member.email && (
-      <a href={member.email} className="team-link">
-        <FaEnvelope />
-      </a>
-    )}
-  </div>
-</div>
+                      {member.email && (
+                        <a href={member.email} className="team-link">
+                          <FaEnvelope />
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
