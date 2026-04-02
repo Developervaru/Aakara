@@ -14,16 +14,26 @@ const team = [
     name: "Mr. Chandru",
     role: "Founder & CEO",
     initials: "CH",
+    instagram: "https://www.instagram.com/chandru_gowda/",
+    whatsapp: "https://wa.me/917007300000",
+    email: "mailto:designs.aakara@gmail"
   },
   {
     name: "Mr. Akshay Gowda G S",
     role: "Marketing Head",
     initials: "AG",
+    instagram: "https://www.instagram.com/akshay_gowdag/",
+    whatsapp: "https://wa.me/917007300000",
+    email: "mailto:designs.aakara@gmail"
   },
   {
     name: "Varun K S",
     role: "Senior Developer",
     initials: "VK",
+    instagram: "https://www.instagram.com/varunkumar.s/",
+    whatsapp: "https://wa.me/917899490237",
+    email: "mailto:messivarun0705@gmail"
+
   },
 ];
 
@@ -154,21 +164,41 @@ function About() {
                   <div className="team-card-img-placeholder">
                     <span className="team-initials">{member.initials}</span>
                   </div>
-                  <div className="team-card-body">
-                    <div className="team-card-name">{member.name}</div>
-                    <div className="team-card-role">{member.role}</div>
-                    <div className="team-card-links">
-                      <a href="https://www.instagram.com/aakara_arch" target="_blank" rel="noreferrer" className="team-link">
-                        <FaInstagram />
-                      </a>
-                      <a href="https://wa.me/9480297100" target="_blank" rel="noreferrer" className="team-link">
-                        <FaWhatsapp />
-                      </a>
-                      <a href="mailto:designs.aakara@gmail.com" className="team-link">
-                        <FaEnvelope />
-                      </a>
-                    </div>
-                  </div>
+<div className="team-card-body">
+  <div className="team-card-name">{member.name}</div>
+  <div className="team-card-role">{member.role}</div>
+  <div className="team-card-desc">{member.instagram}</div>
+
+  <div className="team-card-links">
+    {member.instagram && (
+      <a
+        href={member.instagram}
+        target="_blank"
+        rel="noreferrer"
+        className="team-link"
+      >
+        <FaInstagram />
+      </a>
+    )}
+
+    {member.whatsapp && (
+      <a
+        href={member.whatsapp}
+        target="_blank"
+        rel="noreferrer"
+        className="team-link"
+      >
+        <FaWhatsapp />
+      </a>
+    )}
+
+    {member.email && (
+      <a href={member.email} className="team-link">
+        <FaEnvelope />
+      </a>
+    )}
+  </div>
+</div>
                 </div>
               </div>
             ))}
