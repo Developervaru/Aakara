@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C97A;
+  --dark: #0D0D0D;
+}
+
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--dark);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.splash-screen.splash-fadeout {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.splash-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+/* Ring + Monogram */
+.splash-logo-ring {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.splash-ring-svg {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  inset: 0;
+}
+
+.splash-monogram {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+
+/* Brand */
+.splash-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.splash-brand-main {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+.splash-brand-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Progress */
+.splash-progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 220px;
+}
+
+.splash-progress-bar {
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.splash-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  border-radius: 1px;
+  transition: width 0.05s linear;
+}
+
+.splash-progress-num {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.1em;
+  width: 28px;
+  text-align: right;
+}
+
+/* Tagline */
+.splash-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-top: -8px;
+}
+
+/* Corner accents */
+.splash-corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+}
+
+.splash-corner-tl {
+  top: 32px; left: 32px;
+  border-top: 1px solid rgba(201,168,76,0.3);
+  border-left: 1px solid rgba(201,168,76,0.3);
+}
+
+.splash-corner-tr {
+  top: 32px; right: 32px;
+  border-top: 1px solid rgba(201,168,76,0.3);
+  border-right: 1px solid rgba(201,168,76,0.3);
+}
+
+.splash-corner-bl {
+  bottom: 32px; left: 32px;
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+  border-left: 1px solid rgba(201,168,76,0.3);
+}
+
+.splash-corner-br {
+  bottom: 32px; right: 32px;
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+  border-right: 1px solid rgba(201,168,76,0.3);
+}

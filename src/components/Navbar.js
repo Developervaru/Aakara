@@ -7,6 +7,7 @@ function Navbar() {
   const location = useLocation();
   const navRef = useRef();
   const [scrolled, setScrolled] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -19,6 +20,7 @@ function Navbar() {
     if (navbar && navbar.classList.contains("show")) {
       navbar.classList.remove("show");
     }
+    setMoreOpen(false);
   };
 
   const links = [
@@ -26,6 +28,14 @@ function Navbar() {
     { to: "/about", label: "About" },
     { to: "/services", label: "Services" },
     { to: "/projects", label: "Projects" },
+  ];
+
+  const moreLinks = [
+    { to: "/testimonials", label: "Testimonials" },
+    { to: "/blog", label: "Journal" },
+    { to: "/calculator", label: "Cost Calculator" },
+    { to: "/book", label: "Book Consultation" },
+    { to: "/faq", label: "FAQ" },
   ];
 
   return (
@@ -63,12 +73,40 @@ function Navbar() {
                 </Link>
               </li>
             ))}
+
+            {/* More Dropdown */}
+            <li
+              className="nav-item nav-more-wrap"
+              onMouseEnter={() => setMoreOpen(true)}
+              onMouseLeave={() => setMoreOpen(false)}
+            >
+              <button
+                className={`nav-link nav-more-btn ${moreLinks.some(l => l.to === location.pathname) ? "active-link" : ""}`}
+                onClick={() => setMoreOpen(o => !o)}
+              >
+                More ▾
+              </button>
+              {moreOpen && (
+                <div className="nav-dropdown">
+                  {moreLinks.map(({ to, label }) => (
+                    <Link
+                      key={to}
+                      to={to}
+                      className={`nav-dropdown-item ${location.pathname === to ? "nav-dropdown-item--active" : ""}`}
+                      onClick={closeNavbar}
+                    >
+                      {label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </li>
+
             <li className="nav-item ms-lg-2">
               <Link
                 className={`nav-link nav-contact-btn ${location.pathname === "/contact" ? "active-link" : ""}`}
                 to="/contact"
                 onClick={closeNavbar}
-                style={{backgroundColor:'gold'}}
               >
                 Contact Us
               </Link>

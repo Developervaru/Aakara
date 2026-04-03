@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaPhoneAlt, FaEnvelope, FaWhatsapp, FaInstagram, FaMapMarkerAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaWhatsapp, FaInstagram, FaMapMarkerAlt, FaCalculator, FaCalendarAlt } from "react-icons/fa";
 import Logo from "../images/Logo.png";
 import "../CSS/Footer.css";
 
@@ -40,19 +40,33 @@ function Footer() {
               <li><Link to="/about">About</Link></li>
               <li><Link to="/services">Services</Link></li>
               <li><Link to="/projects">Projects</Link></li>
+              <li><Link to="/testimonials">Testimonials</Link></li>
+              <li><Link to="/blog">Journal</Link></li>
+              <li><Link to="/faq">FAQ</Link></li>
               <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Tools */}
           <div className="col-lg-3 col-md-6 col-6">
-            <span className="footer-col-title">Services</span>
+            <span className="footer-col-title">Quick Tools</span>
             <ul className="footer-links">
-              <li><a href="/services">Architectural Planning</a></li>
-              <li><a href="/services">Interior Design</a></li>
-              <li><a href="/services">3D Modelling</a></li>
-              <li><a href="/services">Structural Design</a></li>
-              <li><a href="/services">Construction & PMC</a></li>
+              <li>
+                <Link to="/calculator">
+                  <FaCalculator style={{ fontSize: "11px", color: "var(--gold)", marginRight: "6px" }} />
+                  Cost Calculator
+                </Link>
+              </li>
+              <li>
+                <Link to="/book">
+                  <FaCalendarAlt style={{ fontSize: "11px", color: "var(--gold)", marginRight: "6px" }} />
+                  Book Consultation
+                </Link>
+              </li>
+              <li><Link to="/services">Architectural Planning</Link></li>
+              <li><Link to="/services">Interior Design</Link></li>
+              <li><Link to="/services">3D Modelling</Link></li>
+              <li><Link to="/services">Construction & PMC</Link></li>
             </ul>
           </div>
 
